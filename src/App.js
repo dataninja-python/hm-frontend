@@ -10,12 +10,40 @@ class App extends Component {
     instructions: '',
     recipes: [],
   }
+  getRecipes = () => {
+    axios.get('/recipes')
+    .then((response) => this.setState({recipes: response.data}),
+    (err) => console.error(err))
+    .catch((error) => console.error(error))
+  }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    })
+  }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    axios.post('/recipes', this.state).then((response) => {this.getRecipes()})
+  }
+  componentDidMount = () => {
+    this.getRecipes()
+  }
+  
   render = () => {
-    return (
-      <div>
-        <h1>Hello</h1>
+    const output = (
+      <div className="recipes">
+        {this.state.recipes.map((recipe) => {
+          return (
+            <div className="recipe">
+              <h3>Name: {recipe.name}</h3>
+              <p>Ingredients: {recipe.ingredients}</p>
+              <p>Instructions: {recipe.instructions}</p>
+            </div>
+          )
+        })}
       </div>
-    )
+    );
+    return output
   }
 }
 
