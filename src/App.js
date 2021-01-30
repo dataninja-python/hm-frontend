@@ -31,7 +31,7 @@ class App extends Component {
   updateRecipe = (event) => {
     event.preventDefault()
     const id = event.target.id
-    axios.put('/recipes/' = id, this.state).then((response) => {
+    axios.put('/recipes/' + id, this.state).then((response) => {
       this.getRecipes()
       this.setState({
         name: '',
