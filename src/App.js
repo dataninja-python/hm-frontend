@@ -52,6 +52,7 @@ class App extends Component {
         {this.state.recipes.map((recipe) => {
           return (
             <div>
+             <h1> HomeMade </h1>
               <div>
                 <h3>Create New Recipe</h3>
                 <form onSubmit={this.handleSubmit}>

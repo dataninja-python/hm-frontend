@@ -38,5 +38,13 @@
 }
 
 .recipes {
-   background-color: aqua;
+   background-color: whitesmoke;
+   display: block;
+   text-align: center;
+
+}
+
+img {
+   width: 60%;
+   
 }
