@@ -49,10 +49,10 @@ class App extends Component {
   render = () => {
     const output = (
       <div className="recipes">
+       <h1> HomeMade </h1>
         {this.state.recipes.map((recipe) => {
           return (
             <div>
-             <h1> HomeMade </h1>
               <div>
                 <h3>Create New Recipe</h3>
                 <form onSubmit={this.handleSubmit}>
