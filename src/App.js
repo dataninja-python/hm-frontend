@@ -9,7 +9,7 @@ class App extends Component {
     name: '',
     ingredients: '',
     instructions: '',
-    image_url: '',
+    img_url: '',
     recipes: [],
   }
   getRecipes = () => {
@@ -39,7 +39,7 @@ class App extends Component {
         name: '',
         ingredients: '',
         instructions: '',
-        image_url: '',
+        img_url: '',
       })
     })
   }
@@ -60,7 +60,7 @@ class App extends Component {
                   <input type="text" id="name" onChange={this.handleChange} value={this.state.name} />
                   <br />
                   <label htmlFor="name">Image</label>
-                  <input placeholder="url" type="text" id="image" onChange={this.handleChange} value={this.state.image_url} />
+                  <input placeholder="url" type="text" id="image" onChange={this.handleChange} value={this.state.img_url} />
                   <br />
                   <label htmlFor="ingredients">Ingredients</label>
                   <input type="text" id="ingredients" onChange={this.handleChange} value={this.state.ingredients}/>
@@ -73,7 +73,7 @@ class App extends Component {
               </div>
               <div className="recipe" key={recipe.id}>
                 <h3>Name: {recipe.name}</h3>
-                <p>{recipe.image_url}</p>
+                <p>{recipe.img_url}</p>
                 <p>Ingredients: {recipe.ingredients}</p>
                 <p>Instructions: {recipe.instructions}</p>
                 <button value={recipe.id} onClick={this.deleteRecipe}>Delete</button>
@@ -85,7 +85,7 @@ class App extends Component {
                     <label htmlFor="name">Name</label>
                     <br />
                     <label htmlFor="name">Image</label>
-                    <input type="url" id="image" onChange={this.handleChange} value={this.state.image_url} />
+                    <input type="url" id="image" onChange={this.handleChange} value={this.state.img_url} />
                     <br />
                     <label htmlFor="Ingredients">Ingredients</label>
                     <input type="text" id="ingredients" onChange={this.handleChange}/>
