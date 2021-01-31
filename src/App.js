@@ -39,7 +39,7 @@ class App extends Component {
         name: '',
         ingredients: '',
         instructions: '',
-        img_url: '',
+        image: '',
       })
     })
   }
@@ -50,30 +50,30 @@ class App extends Component {
     const output = (
       <div className="recipes">
        <h1> HomeMade </h1>
+       <div>
+         <h3>Create New Recipe</h3>
+         <form onSubmit={this.handleSubmit}>
+           <label htmlFor="name">Name</label>
+           <input type="text" id="name" onChange={this.handleChange} value={this.state.name} />
+           <br />
+           <label htmlFor="name">Image</label>
+           <input placeholder="url" type="text" id="image" onChange={this.handleChange} value={this.state.image} />
+           <br />
+           <label htmlFor="ingredients">Ingredients</label>
+           <input type="text" id="ingredients" onChange={this.handleChange} value={this.state.ingredients}/>
+           <br />
+           <label htmlFor="ingredients">Instructions</label>
+           <input type="text" id="instructions" onChange={this.handleChange} value={this.state.instructions}/>
+           <br />
+           <input type="submit" value="Create Recipe" />
+         </form>
+       </div>
         {this.state.recipes.map((recipe) => {
           return (
             <div>
-              <div>
-                <h3>Create New Recipe</h3>
-                <form onSubmit={this.handleSubmit}>
-                  <label htmlFor="name">Name</label>
-                  <input type="text" id="name" onChange={this.handleChange} value={this.state.name} />
-                  <br />
-                  <label htmlFor="name">Image</label>
-                  <input placeholder="url" type="text" id="image" onChange={this.handleChange} value={this.state.img_url} />
-                  <br />
-                  <label htmlFor="ingredients">Ingredients</label>
-                  <input type="text" id="ingredients" onChange={this.handleChange} value={this.state.ingredients}/>
-                  <br />
-                  <label htmlFor="ingredients">Instructions</label>
-                  <input type="text" id="instructions" onChange={this.handleChange} value={this.state.instructions}/>
-                  <br />
-                  <input type="submit" value="Create Recipe" />
-                </form>
-              </div>
               <div className="recipe" key={recipe.id}>
                 <h3>Name: {recipe.name}</h3>
-                <p>{recipe.img_url}</p>
+                <img src={recipe.img_url} alt="image"/>
                 <p>Ingredients: {recipe.ingredients}</p>
                 <p>Instructions: {recipe.instructions}</p>
                 <button value={recipe.id} onClick={this.deleteRecipe}>Delete</button>
