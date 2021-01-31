@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.recipes {
+   background-color: whitesmoke;
+   display: block;
+   text-align: center;
+
+}
+
+img {
+   width: 60%;
+   
+}
