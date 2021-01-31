@@ -9,6 +9,7 @@ class App extends Component {
     name: '',
     ingredients: '',
     instructions: '',
+    image_url: '',
     recipes: [],
   }
   getRecipes = () => {
@@ -38,6 +39,7 @@ class App extends Component {
         name: '',
         ingredients: '',
         instructions: '',
+        image_url: '',
       })
     })
   }
@@ -47,23 +49,23 @@ class App extends Component {
   render = () => {
     const output = (
       <div className="recipes">
+       <h1> HomeMade </h1>
         {this.state.recipes.map((recipe) => {
           return (
             <div>
-              <div className="recipe">
-                <h3>Name: {recipe.name}</h3>
-                <p>Ingredients: {recipe.ingredients}</p>
-                <p>Instructions: {recipe.instructions}</p>
-              </div>
               <div>
                 <h3>Create New Recipe</h3>
                 <form onSubmit={this.handleSubmit}>
                   <label htmlFor="name">Name</label>
                   <input type="text" id="name" onChange={this.handleChange} value={this.state.name} />
                   <br />
+                  <label htmlFor="name">Image</label>
+                  <input placeholder="url" type="text" id="image" onChange={this.handleChange} value={this.state.image_url} />
+                  <br />
                   <label htmlFor="ingredients">Ingredients</label>
                   <input type="text" id="ingredients" onChange={this.handleChange} value={this.state.ingredients}/>
                   <br />
+                  <label htmlFor="ingredients">Instructions</label>
                   <input type="text" id="instructions" onChange={this.handleChange} value={this.state.instructions}/>
                   <br />
                   <input type="submit" value="Create Recipe" />
@@ -71,6 +73,7 @@ class App extends Component {
               </div>
               <div className="recipe" key={recipe.id}>
                 <h3>Name: {recipe.name}</h3>
+                <p>{recipe.image_url}</p>
                 <p>Ingredients: {recipe.ingredients}</p>
                 <p>Instructions: {recipe.instructions}</p>
                 <button value={recipe.id} onClick={this.deleteRecipe}>Delete</button>
@@ -81,11 +84,14 @@ class App extends Component {
                   <form id={recipe.id} onSubmit={this.updateRecipe}>
                     <label htmlFor="name">Name</label>
                     <br />
-                    <input type="text" id="ingredients" onChange={this.handleChange}/>
-                    <label htmlFor="Ingredients">Ingredients</label>
+                    <label htmlFor="name">Image</label>
+                    <input type="url" id="image" onChange={this.handleChange} value={this.state.image_url} />
                     <br />
-                    <input type="text" id="instructions" onChange={this.handleChange}/>
+                    <label htmlFor="Ingredients">Ingredients</label>
+                    <input type="text" id="ingredients" onChange={this.handleChange}/>
+                    <br />
                     <label htmlFor="Instructions">Instructions</label>
+                    <input type="text" id="instructions" onChange={this.handleChange}/>
                     <br />
                     <input type="submit" value="Update Recipe" />
                   </form>
