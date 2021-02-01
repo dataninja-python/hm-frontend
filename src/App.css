@@ -1,7 +1,19 @@
+body {
+   background-color: dimgrey;
+   font-family: monospace;
+}
+
 .App {
   text-align: center;
 }
 
+h1 {
+   margin: 20px;
+
+}
+button {
+   background-color: red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -41,11 +53,16 @@
    background-color: whitesmoke;
    display: block;
    text-align: center;
+   margin-left: 10%;
+   margin-right: 10%;
+
+
 
 
 }
 
 img {
-   width: 60%;
+   width: 70%;
+   padding: 5%;
 
 }

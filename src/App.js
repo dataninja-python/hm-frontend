@@ -51,7 +51,9 @@ class App extends Component {
       <div className="recipes">
        <h1> HomeMade </h1>
        <div>
+       <br />
          <h3>Create New Recipe</h3>
+         <br />
          <form onSubmit={this.handleSubmit}>
            <label htmlFor="name">Name</label>
            <input type="text" id="name" onChange={this.handleChange} value={this.state.name} />
@@ -67,6 +69,7 @@ class App extends Component {
            <br />
            <input type="submit" value="Create Recipe" />
          </form>
+         <br />
        </div>
         {this.state.recipes.map((recipe) => {
           return (
@@ -96,6 +99,7 @@ class App extends Component {
                     <input type="submit" value="Update Recipe" />
                   </form>
                 </details>
+                <br />
               </div>
             </div>
           )
