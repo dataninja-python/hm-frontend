@@ -39,7 +39,7 @@ class App extends Component {
         name: '',
         ingredients: '',
         instructions: '',
-        image: '',
+        img_url: '',
       })
     })
   }

@@ -46,5 +46,9 @@
 
 img {
    width: 60%;
-   
+
+}
+
+* {
+   border-color: black;
 }
