@@ -76,7 +76,7 @@ class App extends Component {
             <div>
               <div className="recipe" key={recipe.id}>
                 <h3>Name: {recipe.name}</h3>
-                <img src={recipe.img_url} alt="image"/>
+                <img src={recipe.image} alt="" />
                 <p>Ingredients: {recipe.ingredients}</p>
                 <p>Instructions: {recipe.instructions}</p>
                 <button value={recipe.id} onClick={this.deleteRecipe}>Delete</button>
