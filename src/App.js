@@ -9,11 +9,11 @@ class App extends Component {
     name: '',
     ingredients: '',
     instructions: '',
-    img_url: '',
+    image: '',
     recipes: [],
   }
   getRecipes = () => {
-    axios.get('http://localhost:3000/recipes')
+    axios.get('https://shrouded-island-32281.herokuapp.com/recipes/')
     .then((response) => this.setState({recipes: response.data}),
     (err) => console.error(err))
     .catch((error) => console.error(error))
@@ -25,7 +25,7 @@ class App extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('https://shrouded-island-32281.herokuapp.com/recipes', this.state).then((response) => {this.getRecipes()})
+    axios.post('https://shrouded-island-32281.herokuapp.com/recipes/', this.state).then((response) => {this.getRecipes()})
   }
   deleteRecipe = (event) => {
     axios.delete('https://shrouded-island-32281.herokuapp.com/recipes/' + event.target.value).then((response) => {this.getRecipes()})
@@ -39,7 +39,7 @@ class App extends Component {
         name: '',
         ingredients: '',
         instructions: '',
-        img_url: '',
+        image: '',
       })
     })
   }
