@@ -13,7 +13,7 @@ class App extends Component {
     recipes: [],
   }
   getRecipes = () => {
-    axios.get('https://shrouded-island-32281.herokuapp.com/recipes')
+    axios.get('http://localhost:3000/recipes')
     .then((response) => this.setState({recipes: response.data}),
     (err) => console.error(err))
     .catch((error) => console.error(error))
