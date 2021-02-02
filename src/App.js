@@ -88,7 +88,7 @@ class App extends Component {
                     <label htmlFor="name">Name</label>
                     <br />
                     <label htmlFor="name">Image</label>
-                    <input type="url" id="image" onChange={this.handleChange} value={this.state.img_url} />
+                    <input type="url" id="image" onChange={this.handleChange} value={this.state.image} />
                     <br />
                     <label htmlFor="Ingredients">Ingredients</label>
                     <input type="text" id="ingredients" onChange={this.handleChange}/>
