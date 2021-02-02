@@ -13,7 +13,7 @@ class App extends Component {
     recipes: [],
   }
   getRecipes = () => {
-    axios.get('/recipes')
+    axios.get('https://shrouded-island-32281.herokuapp.com/recipes')
     .then((response) => this.setState({recipes: response.data}),
     (err) => console.error(err))
     .catch((error) => console.error(error))
@@ -25,15 +25,15 @@ class App extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('/recipes', this.state).then((response) => {this.getRecipes()})
+    axios.post('https://shrouded-island-32281.herokuapp.com/recipes', this.state).then((response) => {this.getRecipes()})
   }
   deleteRecipe = (event) => {
-    axios.delete('/recipes/' + event.target.value).then((response) => {this.getRecipes()})
+    axios.delete('https://shrouded-island-32281.herokuapp.com/recipes/' + event.target.value).then((response) => {this.getRecipes()})
   }
   updateRecipe = (event) => {
     event.preventDefault()
     const id = event.target.id
-    axios.put('/recipes/' + id, this.state).then((response) => {
+    axios.put('https://shrouded-island-32281.herokuapp.com/recipes/' + id, this.state).then((response) => {
       this.getRecipes()
       this.setState({
         name: '',
